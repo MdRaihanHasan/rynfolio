@@ -3425,6 +3425,7 @@ h6, .h6 {
       -ms-flex-pack: start;
       justify-content: start; } }
   .main-menu .navbar-header .navbar-toggle {
+    border: none;
     float: right;
     padding: 4px 0;
     cursor: pointer;
