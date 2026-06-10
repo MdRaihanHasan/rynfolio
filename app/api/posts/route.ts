@@ -8,6 +8,8 @@ import { getAllPosts } from "@/lib/data/posts";
  *   tag      - filter by tag (case-insensitive)
  *   category - filter by category (case-insensitive)
  *   limit    - max number of posts returned
+ *   page     - 1-based page number (used with perPage, default perPage 10)
+ *   perPage  - page size when paginating
  * Returns post metadata (without full content); fetch /api/posts/[slug] for the body.
  */
 export function GET(request: NextRequest) {
@@ -37,8 +39,18 @@ export function GET(request: NextRequest) {
     result = result.slice(0, limit);
   }
 
+  const total = result.length;
+  const page = Number(searchParams.get("page")) || 0;
+  const perPage = Number(searchParams.get("perPage")) || 10;
+  const totalPages = Math.max(1, Math.ceil(total / perPage));
+  if (page) {
+    const current = Math.min(Math.max(page, 1), totalPages);
+    result = result.slice((current - 1) * perPage, current * perPage);
+  }
+
   return NextResponse.json({
-    total: result.length,
+    total,
+    ...(page ? { page: Math.min(Math.max(page, 1), totalPages), perPage, totalPages } : {}),
     posts: result.map(({ content: _content, ...meta }) => ({
       ...meta,
       url: `/blog/${meta.slug}`,

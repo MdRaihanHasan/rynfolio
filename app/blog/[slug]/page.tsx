@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   </div>
                   <div className="author-date-share mb-40 wow fadeInUp delay-0-4s">
                     <div className="author">
-                      <img src={author.image} alt={author.name} />
+                      <img className="author-image-blog" src={author.image} alt={author.name} />
                     </div>
                     <div className="text">
                       <span>Post By</span>

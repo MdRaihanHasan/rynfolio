@@ -3,7 +3,10 @@ import PageBanner from "@/components/ui/PageBanner";
 import BgLines from "@/components/ui/BgLines";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogSidebar from "@/components/blog/BlogSidebar";
+import Pagination from "@/components/blog/Pagination";
 import { getAllPosts } from "@/lib/data/posts";
+
+const POSTS_PER_PAGE = 10;
 
 export const metadata: Metadata = {
   title: "Blog - Md Raihan Hasan | Laravel, AWS, DevOps & Full-Stack Articles",
@@ -13,11 +16,11 @@ export const metadata: Metadata = {
 };
 
 type PageProps = {
-  searchParams: Promise<{ q?: string; tag?: string; category?: string }>;
+  searchParams: Promise<{ q?: string; tag?: string; category?: string; page?: string }>;
 };
 
 export default async function BlogPage({ searchParams }: PageProps) {
-  const { q, tag, category } = await searchParams;
+  const { q, tag, category, page } = await searchParams;
 
   let posts = getAllPosts();
   if (tag) {
@@ -42,6 +45,13 @@ export default async function BlogPage({ searchParams }: PageProps) {
 
   const filterLabel = tag ?? category ?? (q ? `"${q}"` : null);
 
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const currentPage = Math.min(Math.max(Number(page) || 1, 1), totalPages);
+  const pagePosts = posts.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
+
   return (
     <>
       <PageBanner title="Blog" />
@@ -61,7 +71,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
                   </div>
                 )}
                 <div className="row">
-                  {posts.map((post, index) => (
+                  {pagePosts.map((post, index) => (
                     <BlogCard
                       post={post}
                       delay={index % 2 === 0 ? "delay-0-2s" : "delay-0-4s"}
@@ -74,6 +84,11 @@ export default async function BlogPage({ searchParams }: PageProps) {
                     </div>
                   )}
                 </div>
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  query={{ q, tag, category }}
+                />
               </div>
             </div>
             <div className="col-lg-4">

@@ -5999,6 +5999,10 @@ h6, .h6 {
   .blog-details-wrap .image img {
     border-radius: 10px; }
 
+    .author-image-blog {
+      width: 70px;
+    }
+
 .author-date-share {
   display: -webkit-box;
   display: -ms-flexbox;
