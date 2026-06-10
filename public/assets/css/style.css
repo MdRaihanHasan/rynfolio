@@ -3124,6 +3124,12 @@ h6, .h6 {
     -webkit-transition: all 500ms ease;
     -o-transition: all 500ms ease;
     transition: all 500ms ease; }
+    .logo-outer {
+      width: 150px;
+    }
+    .mobile-logo {
+      width: 150px;
+    }
   .main-header .logo-outer {
     -webkit-box-flex: 0;
     -ms-flex: none;
