@@ -1,49 +1,22 @@
 import Link from "next/link";
-
-const categories = [
-  "Web Design",
-  "Mobile Apps Design",
-  "Brand Identity Design",
-  "Motion Graphic Design",
-  "Web Development",
-  "Digital Marketing",
-];
-
-const recentNews = [
-  {
-    title: "Tips For Conducting Studie",
-    image: "/assets/images/widgets/news1.jpg",
-    date: "Sep 25, 2023",
-  },
-  {
-    title: "Usability With Participants",
-    image: "/assets/images/widgets/news2.jpg",
-    date: "Sep 25, 2023",
-  },
-  {
-    title: "Online Environment Work",
-    image: "/assets/images/widgets/news3.jpg",
-    date: "Sep 25, 2023",
-  },
-];
-
-const popularTags = [
-  "Design",
-  "Figma",
-  "Apps",
-  "Branding",
-  "Development",
-  "Digital",
-  "Mobile Apps",
-];
+import {
+  formatPostDate,
+  getAllCategories,
+  getAllPosts,
+  getAllTags,
+} from "@/lib/data/posts";
 
 export default function BlogSidebar() {
+  const recentPosts = getAllPosts().slice(0, 3);
+  const categories = getAllCategories();
+  const tags = getAllTags();
+
   return (
     <div className="main-sidebar rmt-65">
       <div className="widget widget-search wow fadeInUp delay-0-2s">
         <h4 className="widget-title">Search</h4>
-        <form className="default-search-form">
-          <input type="text" placeholder="Keywords" required />
+        <form className="default-search-form" action="/blog" method="get">
+          <input type="text" name="q" placeholder="Keywords" required />
           <button type="submit" className="searchbutton far fa-search"></button>
         </form>
       </div>
@@ -53,27 +26,29 @@ export default function BlogSidebar() {
           {categories.map((category) => (
             <li key={category}>
               <i className="far fa-angle-right"></i>{" "}
-              <Link href="/blog">{category}</Link>
+              <Link href={`/blog?category=${encodeURIComponent(category)}`}>
+                {category}
+              </Link>
             </li>
           ))}
         </ul>
       </div>
       <div className="widget widget-recent-news wow fadeInUp delay-0-2s">
-        <h4 className="widget-title">Latest News</h4>
+        <h4 className="widget-title">Latest Articles</h4>
         <ul>
-          {recentNews.map((news) => (
-            <li key={news.title}>
+          {recentPosts.map((post) => (
+            <li key={post.slug}>
               <div className="image">
-                <img src={news.image} alt="News" />
+                <img src={post.image} alt={post.imageAlt} loading="lazy" />
               </div>
               <div className="content">
                 <div className="blog-meta mb-5">
-                  <a className="date" href="#">
-                    <i className="far fa-calendar-alt"></i> {news.date}
-                  </a>
+                  <span className="date">
+                    <i className="far fa-calendar-alt"></i> {formatPostDate(post.date)}
+                  </span>
                 </div>
                 <h5>
-                  <Link href="/blog-details">{news.title}</Link>
+                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h5>
               </div>
             </li>
@@ -83,8 +58,8 @@ export default function BlogSidebar() {
       <div className="widget widget-tag-cloud wow fadeInUp delay-0-2s">
         <h4 className="widget-title">Popular Tags</h4>
         <div className="tag-coulds">
-          {popularTags.map((tag) => (
-            <Link href="/blog" key={tag}>
+          {tags.map((tag) => (
+            <Link href={`/blog?tag=${encodeURIComponent(tag)}`} key={tag}>
               {tag}
             </Link>
           ))}
@@ -98,7 +73,7 @@ export default function BlogSidebar() {
           }}
         >
           <span className="sub-title">Get A Quote</span>
-          <h4>Looking For Creative Web Designer</h4>
+          <h4>Need a Full-Stack Developer?</h4>
           <Link href="/contact" className="theme-btn">
             Hire Me <i className="far fa-angle-right"></i>
           </Link>

@@ -1,14 +1,8 @@
 import Link from "next/link";
-
-export type BlogPost = {
-  title: string;
-  image: string;
-  tags: string[];
-  date: string;
-};
+import { formatPostDate, type Post } from "@/lib/data/posts";
 
 type BlogCardProps = {
-  post: BlogPost;
+  post: Post;
   delay: string;
 };
 
@@ -17,24 +11,30 @@ export default function BlogCard({ post, delay }: BlogCardProps) {
     <div className="col-md-6 item">
       <div className={`blog-item style-two wow fadeInUp ${delay}`}>
         <div className="image">
-          <img src={post.image} alt="Blog Standard" />
+          <Link href={`/blog/${post.slug}`}>
+            <img src={post.image} alt={post.imageAlt} loading="lazy" />
+          </Link>
         </div>
         <div className="content">
           <div className="blog-meta mb-20">
-            {post.tags.map((tag) => (
-              <Link className="tag" href="/blog" key={tag}>
+            {post.tags.slice(0, 2).map((tag) => (
+              <Link
+                className="tag"
+                href={`/blog?tag=${encodeURIComponent(tag)}`}
+                key={tag}
+              >
                 {tag}
               </Link>
             ))}
           </div>
           <h5>
-            <Link href="/blog-details">{post.title}</Link>
+            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
           </h5>
           <hr />
           <div className="blog-meta mb-5">
-            <a className="date" href="#">
-              <i className="far fa-calendar-alt"></i> {post.date}
-            </a>
+            <span className="date">
+              <i className="far fa-calendar-alt"></i> {formatPostDate(post.date)}
+            </span>
           </div>
         </div>
       </div>

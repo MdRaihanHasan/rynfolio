@@ -17,6 +17,7 @@ const stylesheets = [
 ];
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ryn.bd"),
   title:
     "Md Raihan Hasan – Full-Stack Web Developer & Server Specialist | Laravel, React, Next.js, AWS",
   description:
