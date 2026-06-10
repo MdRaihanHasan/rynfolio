@@ -1,0 +1,73 @@
+/* GitHub search input - matches existing dark form fields */
+.github-search-wrap {
+    max-width: 480px;
+    margin: 0 auto 40px;
+    position: relative;
+}
+.github-search-wrap i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6b35;
+    font-size: 16px;
+    pointer-events: none;
+}
+#github-search {
+    width: 100%;
+    padding: 14px 20px 14px 48px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+#github-search::placeholder { color: #999; }
+#github-search:focus {
+    outline: none;
+    border-color: #ff6b35;
+    background: rgba(255, 255, 255, 0.06);
+}
+.github-count {
+    text-align: center;
+    color: #b5b5b5;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+.github-count strong { color: #ff6b35; }
+.github-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    color: #999;
+}
+.github-empty i { font-size: 36px; margin-bottom: 12px; color: #ff6b35; }
+
+/* FIX: GitHub OG images (1200x630) are too tall at natural size.
+   Constrain height + cover crop so cards match the existing
+   project-item style-two layout used above this section. */
+#github-repos-grid .project-item { position: relative; }
+#github-repos-grid .project-image {
+    height: 220px;
+    overflow: hidden;
+    background: #1a1a1a;
+    position: relative;
+}
+#github-repos-grid .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+/* Fallback icon (shown when OG image fails to load) */
+.project-image .gh-fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+    color: #ff6b35;
+    font-size: 42px;
+}

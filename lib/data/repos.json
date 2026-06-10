@@ -1,0 +1,284 @@
+[
+  {
+    "title": "9router",
+    "description": "Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.",
+    "repo_url": "https://github.com/WPCodeLab/9router",
+    "readme_link": "https://github.com/WPCodeLab/9router#readme"
+  },
+  {
+    "title": "API-mega-list",
+    "description": "This GitHub repo is a powerhouse collection of APIs you can start using immediately to build everything from simple automations to full-scale applications. One of the most valuable API lists on GitHub—period. 💪",
+    "repo_url": "https://github.com/WPCodeLab/API-mega-list",
+    "readme_link": "https://github.com/WPCodeLab/API-mega-list#readme"
+  },
+  {
+    "title": "API-tester-chrome-extension",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/API-tester-chrome-extension",
+    "readme_link": "https://github.com/WPCodeLab/API-tester-chrome-extension#readme"
+  },
+  {
+    "title": "awesome-copilot",
+    "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
+    "repo_url": "https://github.com/WPCodeLab/awesome-copilot",
+    "readme_link": "https://github.com/WPCodeLab/awesome-copilot#readme"
+  },
+  {
+    "title": "caveman",
+    "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
+    "repo_url": "https://github.com/WPCodeLab/caveman",
+    "readme_link": "https://github.com/WPCodeLab/caveman#readme"
+  },
+  {
+    "title": "chat",
+    "description": "Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬",
+    "repo_url": "https://github.com/WPCodeLab/chat",
+    "readme_link": "https://github.com/WPCodeLab/chat#readme"
+  },
+  {
+    "title": "claude-counter",
+    "description": "A minimal browser extension that shows token count, cache timer, and usage bars on claude.ai.",
+    "repo_url": "https://github.com/WPCodeLab/claude-counter",
+    "readme_link": "https://github.com/WPCodeLab/claude-counter#readme"
+  },
+  {
+    "title": "codeflow",
+    "description": "Paste any GitHub URL → interactive architecture map. See how files connect, find what breaks if you change something. No install, no accounts — runs entirely in your browser.",
+    "repo_url": "https://github.com/WPCodeLab/codeflow",
+    "readme_link": "https://github.com/WPCodeLab/codeflow#readme"
+  },
+  {
+    "title": "Dashyn",
+    "description": "A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations.",
+    "repo_url": "https://github.com/WPCodeLab/Dashyn",
+    "readme_link": "https://github.com/WPCodeLab/Dashyn#readme"
+  },
+  {
+    "title": "dev-filler",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/dev-filler",
+    "readme_link": "https://github.com/WPCodeLab/dev-filler#readme"
+  },
+  {
+    "title": "developer-portfolios",
+    "description": "A list of developer portfolios for your inspiration",
+    "repo_url": "https://github.com/WPCodeLab/developer-portfolios",
+    "readme_link": "https://github.com/WPCodeLab/developer-portfolios#readme"
+  },
+  {
+    "title": "draw",
+    "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+    "repo_url": "https://github.com/WPCodeLab/draw",
+    "readme_link": "https://github.com/WPCodeLab/draw#readme"
+  },
+  {
+    "title": "eml-reader",
+    "description": "A beautiful, fully client-side `.eml` file viewer built with plain HTML and JavaScript — no frameworks, no server, no uploads.",
+    "repo_url": "https://github.com/WPCodeLab/eml-reader",
+    "readme_link": "https://github.com/WPCodeLab/eml-reader#readme"
+  },
+  {
+    "title": "facePocket-chrome-extension",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/facePocket-chrome-extension",
+    "readme_link": "https://github.com/WPCodeLab/facePocket-chrome-extension#readme"
+  },
+  {
+    "title": "FocusModePlus-chrome-extension",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/FocusModePlus-chrome-extension",
+    "readme_link": "https://github.com/WPCodeLab/FocusModePlus-chrome-extension#readme"
+  },
+  {
+    "title": "free-llm-api-keys",
+    "description": "Free LLM API keys for GPT-5.4, Claude, DeepSeek, Gemini, Grok — copy, paste, use. Updated 3-5x daily. No credit card needed.",
+    "repo_url": "https://github.com/WPCodeLab/free-llm-api-keys",
+    "readme_link": "https://github.com/WPCodeLab/free-llm-api-keys#readme"
+  },
+  {
+    "title": "freellmapi",
+    "description": "OpenAI-compatible proxy that aggregates free-tier keys from ~14 AI providers with automatic failover. For personal experimentation only.",
+    "repo_url": "https://github.com/WPCodeLab/freellmapi",
+    "readme_link": "https://github.com/WPCodeLab/freellmapi#readme"
+  },
+  {
+    "title": "GLM-OCR-90M",
+    "description": "GLM-OCR: Accurate ×  Fast × Comprehensive",
+    "repo_url": "https://github.com/WPCodeLab/GLM-OCR-90M",
+    "readme_link": "https://github.com/WPCodeLab/GLM-OCR-90M#readme"
+  },
+  {
+    "title": "Gorib-Site",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/Gorib-Site",
+    "readme_link": "https://github.com/WPCodeLab/Gorib-Site#readme"
+  },
+  {
+    "title": "LaragonTerminalPro",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/LaragonTerminalPro",
+    "readme_link": "https://github.com/WPCodeLab/LaragonTerminalPro#readme"
+  },
+  {
+    "title": "LarapiKit",
+    "description": "LarapiKit is a versatile and robust Laravel API package designed to simplify and enhance your web application development process. With a focus on security time saving and easy integration, this package empowers developers to streamline their API-related tasks, saving time and effort.",
+    "repo_url": "https://github.com/WPCodeLab/LarapiKit",
+    "readme_link": "https://github.com/WPCodeLab/LarapiKit#readme"
+  },
+  {
+    "title": "laravel-brain",
+    "description": "Visualize your Laravel request lifecycle as an interactive graph",
+    "repo_url": "https://github.com/WPCodeLab/laravel-brain",
+    "readme_link": "https://github.com/WPCodeLab/laravel-brain#readme"
+  },
+  {
+    "title": "lokibrunch",
+    "description": "Paste any GitHub URL → interactive architecture map. See how files connect, find what breaks if you change something. No install, no accounts — runs entirely in your browser.",
+    "repo_url": "https://github.com/WPCodeLab/lokibrunch",
+    "readme_link": "https://github.com/WPCodeLab/lokibrunch#readme"
+  },
+  {
+    "title": "lyra-panel",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/lyra-panel",
+    "readme_link": "https://github.com/WPCodeLab/lyra-panel#readme"
+  },
+  {
+    "title": "memanto-claude-memory",
+    "description": "Memory that AI Agents Love!",
+    "repo_url": "https://github.com/WPCodeLab/memanto-claude-memory",
+    "readme_link": "https://github.com/WPCodeLab/memanto-claude-memory#readme"
+  },
+  {
+    "title": "muxy-cli",
+    "description": "Lightweight and Memory efficient terminal for Mac built with SwiftUI and libghostty",
+    "repo_url": "https://github.com/WPCodeLab/muxy-cli",
+    "readme_link": "https://github.com/WPCodeLab/muxy-cli#readme"
+  },
+  {
+    "title": "nango-700api",
+    "description": "Build product integrations with AI.",
+    "repo_url": "https://github.com/WPCodeLab/nango-700api",
+    "readme_link": "https://github.com/WPCodeLab/nango-700api#readme"
+  },
+  {
+    "title": "NeuroShade",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/NeuroShade",
+    "readme_link": "https://github.com/WPCodeLab/NeuroShade#readme"
+  },
+  {
+    "title": "OmniVoice-Studio",
+    "description": "The open-source ElevenLabs alternative for local voice cloning, design, create, dubbing and dictation Desktop App",
+    "repo_url": "https://github.com/WPCodeLab/OmniVoice-Studio",
+    "readme_link": "https://github.com/WPCodeLab/OmniVoice-Studio#readme"
+  },
+  {
+    "title": "opencode",
+    "description": "The open source coding agent.",
+    "repo_url": "https://github.com/WPCodeLab/opencode",
+    "readme_link": "https://github.com/WPCodeLab/opencode#readme"
+  },
+  {
+    "title": "openhuman",
+    "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+    "repo_url": "https://github.com/WPCodeLab/openhuman",
+    "readme_link": "https://github.com/WPCodeLab/openhuman#readme"
+  },
+  {
+    "title": "paperclip",
+    "description": "Open-source orchestration for zero-human companies",
+    "repo_url": "https://github.com/WPCodeLab/paperclip",
+    "readme_link": "https://github.com/WPCodeLab/paperclip#readme"
+  },
+  {
+    "title": "picoclaw",
+    "description": "Tiny, Fast, and Deployable anywhere — automate the mundane, unleash your creativity",
+    "repo_url": "https://github.com/WPCodeLab/picoclaw",
+    "readme_link": "https://github.com/WPCodeLab/picoclaw#readme"
+  },
+  {
+    "title": "RaiForgeIDE",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/RaiForgeIDE",
+    "readme_link": "https://github.com/WPCodeLab/RaiForgeIDE#readme"
+  },
+  {
+    "title": "scrapy",
+    "description": "Scrapy, a fast high-level web crawling & scraping framework for Python.",
+    "repo_url": "https://github.com/WPCodeLab/scrapy",
+    "readme_link": "https://github.com/WPCodeLab/scrapy#readme"
+  },
+  {
+    "title": "simple-html-editor",
+    "description": "Simplest and smallest WYSIWYG with AI Agent web content editor, entire document, body and head, no dependencies. ",
+    "repo_url": "https://github.com/WPCodeLab/simple-html-editor",
+    "readme_link": "https://github.com/WPCodeLab/simple-html-editor#readme"
+  },
+  {
+    "title": "smskit",
+    "description": "Self-hosted SMS gateway using an Android phone as relay. PHP flat-file backend, web dashboard, REST API, companion Android app. No third-party APIs, zero monthly costs.",
+    "repo_url": "https://github.com/WPCodeLab/smskit",
+    "readme_link": "https://github.com/WPCodeLab/smskit#readme"
+  },
+  {
+    "title": "spinifex",
+    "description": "Spinifex – Open source AWS-compatible platform for secure edge deployments. Run EC2, VPC, S3, and EBS-like services on bare metal with full control. Built for environments where running in the cloud isn’t an option. Whether you’re deploying to edge sites, private data-centers, or operating in low-connectivity or highly contested environments.",
+    "repo_url": "https://github.com/WPCodeLab/spinifex",
+    "readme_link": "https://github.com/WPCodeLab/spinifex#readme"
+  },
+  {
+    "title": "StickyNotes",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/StickyNotes",
+    "readme_link": "https://github.com/WPCodeLab/StickyNotes#readme"
+  },
+  {
+    "title": "SysMocap-Realtime-3d",
+    "description": "A real-time motion capture system for 3D virtual character animating.",
+    "repo_url": "https://github.com/WPCodeLab/SysMocap-Realtime-3d",
+    "readme_link": "https://github.com/WPCodeLab/SysMocap-Realtime-3d#readme"
+  },
+  {
+    "title": "Testlify",
+    "description": "A zero-dependency, browser-based QA testing tool for manually verifying websites before release. Works entirely offline using localStorage — no server, no install, no accounts.",
+    "repo_url": "https://github.com/WPCodeLab/Testlify",
+    "readme_link": "https://github.com/WPCodeLab/Testlify#readme"
+  },
+  {
+    "title": "traffic-monitor",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/traffic-monitor",
+    "readme_link": "https://github.com/WPCodeLab/traffic-monitor#readme"
+  },
+  {
+    "title": "vscode-copilot-chat",
+    "description": "Copilot Chat extension for VS Code",
+    "repo_url": "https://github.com/WPCodeLab/vscode-copilot-chat",
+    "readme_link": "https://github.com/WPCodeLab/vscode-copilot-chat#readme"
+  },
+  {
+    "title": "web-tools",
+    "description": null,
+    "repo_url": "https://github.com/WPCodeLab/web-tools",
+    "readme_link": "https://github.com/WPCodeLab/web-tools#readme"
+  },
+  {
+    "title": "webvm",
+    "description": "Virtual Machine for the Web",
+    "repo_url": "https://github.com/WPCodeLab/webvm",
+    "readme_link": "https://github.com/WPCodeLab/webvm#readme"
+  },
+  {
+    "title": "Winora",
+    "description": "Free, open-source Windows optimization tool for performance, privacy, and simplicity.",
+    "repo_url": "https://github.com/WPCodeLab/Winora",
+    "readme_link": "https://github.com/WPCodeLab/Winora#readme"
+  },
+  {
+    "title": "X-osint",
+    "description": "This is an Open source intelligent framework ie an osint tool which gathers valid information about a phone number, user's email address, perform VIN Osint, and reverse, perform subdomain enumeration, able to find email from a name, and so much more. Best osint tool for Termux and linux",
+    "repo_url": "https://github.com/WPCodeLab/X-osint",
+    "readme_link": "https://github.com/WPCodeLab/X-osint#readme"
+  }
+]

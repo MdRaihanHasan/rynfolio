@@ -1,0 +1,36 @@
+/* Site-level overrides on top of the Noxfolio template CSS (loaded via <link> tags in app/layout.tsx). */
+
+/* The template's jQuery used fadeIn/fadeOut on the scroll-top button; replicate with a class. */
+.scroll-top {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.scroll-top.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* react-slick wraps each slide in an extra div and inlines width:100% on the card,
+   so the template's 15px card margins overflow the slide. Move the gutter onto the
+   slide wrapper to restore the original 30px gap between testimonial cards. */
+.testimonials-wrap .slick-slide {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.testimonials-wrap .testimonial-item {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Preloader fade-out (jQuery .fadeOut(500) equivalent) */
+.preloader {
+  transition: opacity 0.5s;
+}
+
+.preloader.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
