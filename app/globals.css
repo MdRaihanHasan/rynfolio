@@ -150,6 +150,52 @@
   }
 }
 
+/* ---- Certifications page ---------------------------------------------------
+   The stock .project-item.style-two is sized for a 2-column grid (50px content
+   padding, 60px gaps, 65px hover button). Tighten it for the 3-column
+   certificate grid and frame the landscape certificate images. */
+.certifications-area .project-item.style-two {
+  margin-bottom: 40px;
+}
+
+.certifications-area .project-item.style-two .project-image {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.certifications-area .project-item.style-two .project-image img {
+  width: 100%;
+}
+
+.certifications-area .project-item.style-two .project-image .details-btn {
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  font-size: 17px;
+}
+
+.certifications-area .project-item.style-two .project-content {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.certifications-area .project-item.style-two .project-content .sub-title {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.certifications-area .project-item.style-two .project-content h3 {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.certifications-area .project-item.style-two .project-content h3 a:hover {
+  color: var(--primary-color);
+}
+
 /* ---- Blog pagination -------------------------------------------------------
    The template renders bare numbers and Bootstrap's .page-item.disabled rule
    (higher specificity) leaks a white chip through on the disabled arrows.

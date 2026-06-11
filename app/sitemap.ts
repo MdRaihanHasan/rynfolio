@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/projects-masonry`, changeFrequency: "monthly", priority: 0.4 },
     { url: `${BASE_URL}/project-details`, changeFrequency: "monthly", priority: 0.4 },
     { url: `${BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/certifications`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/contact`, changeFrequency: "yearly", priority: 0.7 },
   ];
 
