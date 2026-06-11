@@ -30,7 +30,11 @@ export default function Pagination({ currentPage, totalPages, query }: Paginatio
             <i className="far fa-angle-left"></i>
           </span>
         ) : (
-          <Link className="page-link" href={pageHref(currentPage - 1, query)}>
+          <Link
+            className="page-link"
+            href={pageHref(currentPage - 1, query)}
+            aria-label="Previous page"
+          >
             <i className="far fa-angle-left"></i>
           </Link>
         )}
@@ -48,7 +52,11 @@ export default function Pagination({ currentPage, totalPages, query }: Paginatio
             <i className="far fa-angle-right"></i>
           </span>
         ) : (
-          <Link className="page-link" href={pageHref(currentPage + 1, query)}>
+          <Link
+            className="page-link"
+            href={pageHref(currentPage + 1, query)}
+            aria-label="Next page"
+          >
             <i className="far fa-angle-right"></i>
           </Link>
         )}

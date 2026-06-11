@@ -34,3 +34,173 @@
   opacity: 0;
   pointer-events: none;
 }
+
+/* ---- Home "Latest News & Blog" cards --------------------------------------
+   The template centers the content vertically next to the image, which leaves
+   uneven gaps and ragged card heights. Stretch both columns, pin the date /
+   read-more row to the bottom, and crop the image to fill the card height.
+   Scoped with :not(.style-two) so the /blog listing cards are untouched. */
+.blog-area .blog-item:not(.style-two) {
+  align-items: stretch;
+  height: calc(100% - 30px);
+}
+
+.blog-area .blog-item:not(.style-two) .image {
+  width: 45%;
+  max-width: 45%;
+  margin-right: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.blog-area .blog-item:not(.style-two) .image a {
+  display: block;
+  height: 100%;
+}
+
+.blog-area .blog-item:not(.style-two) .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s;
+}
+
+.blog-area .blog-item:not(.style-two):hover .image img {
+  transform: scale(1.06);
+}
+
+.blog-area .blog-item:not(.style-two) .content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px 20px 28px;
+}
+
+.blog-area .blog-item:not(.style-two) .content .tags {
+  gap: 8px;
+}
+
+.blog-area .blog-item:not(.style-two) .content .tags .tag {
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.blog-area .blog-item:not(.style-two) .content .tags .tag:not(:last-child) {
+  margin-right: 0; /* spacing handled by gap so wrapped rows stay even */
+}
+
+.blog-area .blog-item:not(.style-two) .content h5 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.blog-area .blog-item:not(.style-two) .blog-footer-meta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.blog-area .blog-item:not(.style-two) .blog-footer-meta .date {
+  font-size: 15px;
+}
+
+.blog-area .blog-item:not(.style-two) .blog-footer-meta .date i {
+  color: var(--primary-color);
+}
+
+.blog-area .blog-item:not(.style-two) .blog-footer-meta .read-more {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.blog-area .blog-item:not(.style-two) .blog-footer-meta .read-more i {
+  margin-left: 6px;
+  transition: margin-left 0.3s;
+}
+
+.blog-area .blog-item:not(.style-two) .blog-footer-meta .read-more:hover i {
+  margin-left: 10px;
+}
+
+/* Breakpoints where the template stacks the card (image above content) */
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+  only screen and (max-width: 767px) {
+  .blog-area .blog-item:not(.style-two) .image {
+    width: 100%;
+    max-width: none;
+  }
+
+  .blog-area .blog-item:not(.style-two) .image img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .blog-area .blog-item:not(.style-two) .content {
+    padding: 10px 15px 15px;
+  }
+}
+
+/* ---- Blog pagination -------------------------------------------------------
+   The template renders bare numbers and Bootstrap's .page-item.disabled rule
+   (higher specificity) leaks a white chip through on the disabled arrows.
+   Restyle as boxed buttons; selectors carry enough specificity to beat both
+   bootstrap.min.css and style.css regardless of load order. */
+ul.pagination {
+  margin-left: 0;
+  margin-right: 0;
+  gap: 10px;
+}
+
+ul.pagination li.page-item {
+  margin: 10px 0 0;
+}
+
+ul.pagination li.page-item .page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  padding: 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--base-color);
+  background: var(--lighter-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: none;
+  transition: 0.3s;
+}
+
+ul.pagination li.page-item .page-link:focus {
+  box-shadow: none;
+}
+
+ul.pagination li.page-item:hover:not(.disabled):not(.active) .page-link {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background: var(--lighter-color);
+}
+
+ul.pagination li.page-item.active .page-link {
+  color: var(--black-color);
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+ul.pagination li.page-item.disabled .page-link {
+  color: var(--base-color);
+  background: transparent;
+  border-color: var(--border-color);
+  opacity: 0.4;
+}

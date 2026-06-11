@@ -28,6 +28,79 @@ export const author = {
 
 export const posts: Post[] = [
   {
+    slug: "multiple-claude-profiles-windows-setup",
+    title: "How to Run Multiple Claude Code Accounts on Windows with CLAUDE_CONFIG_DIR",
+    excerpt:
+      "Set up separate Claude Code profiles on Windows for personal, work, and client accounts using CLAUDE_CONFIG_DIR — step-by-step with .bat launchers, VS Code integration, and a note on the global config file.",
+    category: "Tools",
+    tags: ["Claude Code", "Windows", "Developer Tools"],
+    keywords: [
+      "multiple claude accounts windows",
+      "claude config dir",
+      "claude code profiles windows",
+      "claude code multiple accounts",
+      "claude windows developer setup",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Dark terminal window with code on a developer screen",
+    date: "2026-06-11",
+    readTime: "5 min read",
+    content: [
+      {
+        type: "p",
+        text: "If you use Claude Code for both personal projects and client or company work, you quickly run into a problem: there is only one active account at a time. Switching manually through /login every session is tedious and easy to forget — which can mean billing personal work to a company account, or worse, mixing up credentials entirely. The clean solution is separate profiles, one per account, each launched with a single command.",
+      },
+      { type: "h2", text: "How CLAUDE_CONFIG_DIR works" },
+      {
+        type: "p",
+        text: "Claude Code officially supports the CLAUDE_CONFIG_DIR environment variable. When set, Claude stores everything for that session — credentials, history, settings, and MCP plugins — inside the specified directory instead of the default user profile location. Set a different path for each account and the profiles never collide.",
+      },
+      { type: "h2", text: "Step 1: Create a folder for each profile" },
+      {
+        type: "p",
+        text: "Open PowerShell and create a directory for each account you need. For example: mkdir C:\\ClaudeProfiles\\personal, mkdir C:\\ClaudeProfiles\\work, and mkdir C:\\ClaudeProfiles\\client. You can name these whatever makes sense for your setup — the folder name has no special meaning to Claude.",
+      },
+      { type: "h2", text: "Step 2: Create a .bat launcher for each account" },
+      {
+        type: "p",
+        text: "Create a small batch file for each profile. For your personal account, create claude-personal.bat containing two lines: @echo off and set CLAUDE_CONFIG_DIR=C:\\ClaudeProfiles\\personal followed by claude. Repeat the same pattern for work (claude-work.bat) and any other accounts, pointing each at its own folder. Place these files somewhere on your PATH — such as C:\\Users\\YourName\\bin — so you can run them from any terminal.",
+      },
+      { type: "h2", text: "Step 3: Log in to each profile separately" },
+      {
+        type: "p",
+        text: "Run claude-personal.bat in a terminal, then type /login and authenticate with your personal account. Claude writes the credentials into C:\\ClaudeProfiles\\personal and never touches your other profiles. Repeat the same process for each launcher: run it, /login, authenticate. After the initial login each launcher drops you straight into the correct account without any prompting.",
+      },
+      { type: "h2", text: "VS Code integration" },
+      {
+        type: "p",
+        text: "VS Code's terminal profiles let you wire this up permanently. In your terminal settings, add a profile that sets the environment variable and launches Claude: $env:CLAUDE_CONFIG_DIR='C:\\ClaudeProfiles\\personal'; claude. Create one profile per account, give each a clear name like Claude Personal and Claude Work, and switch between them with the terminal dropdown. You can pair this with separate VS Code profiles so each window opens with the right Claude account automatically.",
+      },
+      { type: "h2", text: "One known caveat on Windows" },
+      {
+        type: "p",
+        text: "Some versions of Claude Code on Windows also write to a global .claude.json file in your Windows user home directory, alongside the per-profile config. If you notice accounts bleeding into each other, check whether that file is being updated on every login — if so, the most robust fix is to run each account under a separate Windows user profile, which gives it a completely isolated home directory.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Personal Max account → C:\\ClaudeProfiles\\personal + claude-personal.bat",
+          "Company account → C:\\ClaudeProfiles\\work + claude-work.bat",
+          "Client account → C:\\ClaudeProfiles\\client + claude-client.bat",
+          "Each profile keeps its own history, settings, and MCP plugins",
+        ],
+      },
+      {
+        type: "quote",
+        text: "One environment variable, one folder per account. That is all it takes to keep credentials, history, and settings perfectly isolated on Windows.",
+      },
+      {
+        type: "p",
+        text: "This setup takes about ten minutes to configure and pays back every day. Whether you are juggling a personal Max plan, a company seat, and a client engagement, each context now opens with the right credentials and the right history — no manual switching, no billing surprises.",
+      },
+    ],
+  },
+  {
     slug: "laravel-performance-optimization-guide",
     title: "10 Proven Laravel Performance Optimization Techniques for Production Apps",
     excerpt:

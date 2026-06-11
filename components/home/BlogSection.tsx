@@ -29,7 +29,7 @@ export default function BlogSection() {
                     </Link>
                   </div>
                   <div className="content">
-                    <div className="blog-meta mb-35">
+                    <div className="blog-meta tags mb-15">
                       {post.tags.slice(0, 2).map((tag) => (
                         <Link
                           className="tag"
@@ -43,12 +43,14 @@ export default function BlogSection() {
                     <h5>
                       <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                     </h5>
-                    <hr />
-                    <div className="blog-meta mt-35">
+                    <div className="blog-footer-meta">
                       <span className="date">
                         <i className="far fa-calendar-alt"></i>{" "}
                         {formatPostDate(post.date)}
                       </span>
+                      <Link className="read-more" href={`/blog/${post.slug}`}>
+                        Read More <i className="far fa-angle-right"></i>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -2,24 +2,35 @@
 
 import { useState } from "react";
 
-export default function ContactForm() {
-  const [sent, setSent] = useState(false);
+type Status = "idle" | "sending" | "sent" | "error";
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+export default function ContactForm() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const body = [
-      `Name: ${data.get("name")}`,
-      `Email: ${data.get("email")}`,
-      `Phone: ${data.get("phone_number")}`,
-      `Service: ${data.get("subject")}`,
-      "",
-      `${data.get("message")}`,
-    ].join("\n");
-    window.location.href = `mailto:contact@ryn.bd?subject=${encodeURIComponent(
-      `Project Inquiry: ${data.get("subject")}`
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          phone_number: data.get("phone_number"),
+          subject: data.get("subject"),
+          message: data.get("message"),
+          company: data.get("company"),
+        }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -101,14 +112,29 @@ export default function ContactForm() {
             ></textarea>
           </div>
         </div>
+        {/* Honeypot — hidden from real visitors, catches bots */}
+        <input
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-9999px", height: 0, width: 0, opacity: 0 }}
+        />
         <div className="col-md-12">
           <div className="form-group mb-0">
-            <button type="submit" className="theme-btn">
-              Send Message <i className="far fa-angle-right"></i>
+            <button type="submit" className="theme-btn" disabled={status === "sending"}>
+              {status === "sending" ? "Sending..." : "Send Message"}{" "}
+              <i className="far fa-angle-right"></i>
             </button>
-            {sent && (
+            {status === "sent" && (
               <div id="msgSubmit" style={{ color: "var(--primary-color)", marginTop: 15 }}>
-                Your email client should open now — or write to contact@ryn.bd directly.
+                Thanks! Your message has been sent — I&apos;ll get back to you soon.
+              </div>
+            )}
+            {status === "error" && (
+              <div id="msgSubmit" style={{ color: "#e74c3c", marginTop: 15 }}>
+                Something went wrong — please try again or email contact@ryn.bd directly.
               </div>
             )}
           </div>
