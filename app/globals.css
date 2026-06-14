@@ -250,3 +250,19 @@ ul.pagination li.page-item.disabled .page-link {
   border-color: var(--border-color);
   opacity: 0.4;
 }
+
+/* ---- Sidebar "Latest Articles" thumbnails ---------------------------------
+   The template makes these thumbnails round (border-radius: 50%) but gives the
+   <img> no fixed size, assuming square source images. Our posts use landscape
+   photos, so the circle renders as a squished oval. Pin a 65x65 box and crop to
+   fill so the round mask stays a true circle. Selector is prefixed with
+   .main-sidebar to outrank the template rule, which loads after globals.css. */
+.main-sidebar .widget-recent-news ul li .image {
+  width: 65px;
+}
+
+.main-sidebar .widget-recent-news ul li .image img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+}

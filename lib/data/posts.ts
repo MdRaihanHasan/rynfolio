@@ -28,6 +28,163 @@ export const author = {
 
 export const posts: Post[] = [
   {
+    slug: "claude-first-conversation-setup-5-settings",
+    title: "5 Things to Set Up in Claude Before Your First Conversation",
+    excerpt:
+      "Five settings — Memory, custom instructions, writing style, ChatGPT import, and Projects — that take five minutes and change every Claude conversation after.",
+    category: "AI",
+    tags: ["Claude", "AI", "Productivity"],
+    keywords: [
+      "claude setup",
+      "claude memory setting",
+      "claude custom instructions",
+      "claude writing style",
+      "import chatgpt memory to claude",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Laptop on a desk, ready to be set up for the first time",
+    date: "2026-06-14",
+    readTime: "4 min read",
+    content: [
+      {
+        type: "p",
+        text: "Most people open Claude, type a question, and never touch the settings. That is a mistake. There are five things you can configure in about five minutes that quietly change every answer you get afterwards. I set these up on every new account and every device I sign into — and I do them before the first real conversation, because the rest of the experience compounds on top of them.",
+      },
+      { type: "h2", text: "1. Turn on Memory" },
+      {
+        type: "p",
+        text: "This is the setting that lets Claude actually know who you are. Open Settings, go to Capabilities, and toggle on Memory. Without it, every chat starts from zero and you re-explain yourself constantly. With it on, Claude carries your name, your work, your preferences, and the useful context from past conversations forward. Turn this on first, because the four settings below all build on it.",
+      },
+      { type: "h2", text: "2. Write your instructions for Claude" },
+      {
+        type: "p",
+        text: "One short paragraph here changes every reply Claude gives you. Under Settings, General, find Instructions for Claude (sometimes called custom instructions). Tell it who you are, what you do, and how you want it to respond. Mine reads roughly: I am a full-stack developer, I prefer short direct answers, skip the corporate filler, and tell me when I am wrong. Claude then applies those rules in every conversation, so you stop re-stating them each time.",
+      },
+      { type: "h2", text: "3. Set your writing style" },
+      {
+        type: "p",
+        text: "If Claude sounds too formal, too long, or too robotic, this is usually why. In Settings, General, find Writing Style and either pick a preset or create a custom one. This is separate from your instructions: instructions tell Claude what to do, style tells it how to sound. Set it once and the tone matches yours across every chat going forward.",
+      },
+      { type: "h2", text: "4. Import your ChatGPT memory" },
+      {
+        type: "p",
+        text: "If you have spent months building up context in ChatGPT, you do not have to start from scratch. In Settings, Capabilities, look for the import option that pulls your saved ChatGPT memories into Claude. It is one of the least-known features, and it means everything the other assistant learned about you can transfer over in a single step. Availability depends on your plan and region, so check whether the option is present on your account before you count on it.",
+      },
+      { type: "h2", text: "5. Create your first Project" },
+      {
+        type: "p",
+        text: "This is the feature most people scroll straight past, and it is the most powerful one here. Open Projects in the sidebar and choose New Project — name it something like My Business or Job Search. Upload your relevant files, paste in your background, and add project instructions. Every chat you start inside that project now loads that full context automatically, so you never re-explain the basics again. It is also the exact mechanism behind the Council setup I wrote about separately.",
+      },
+      { type: "h2", text: "Five minutes, every conversation after" },
+      {
+        type: "p",
+        text: "Run through them in order and the whole thing takes about five minutes:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Memory (Settings, Capabilities) — lets Claude remember you between chats",
+          "Instructions for Claude (Settings, General) — one paragraph that shapes every answer",
+          "Writing Style (Settings, General) — fixes the tone so Claude sounds the way you want",
+          "Import from ChatGPT (Settings, Capabilities) — brings your existing context across",
+          "Your first Project (sidebar) — a workspace that loads your full background automatically",
+        ],
+      },
+      {
+        type: "quote",
+        text: "The difference between people who find Claude mediocre and people who find it indispensable is rarely the prompts. It is usually these five settings.",
+      },
+      {
+        type: "p",
+        text: "None of this is hidden or advanced — it is just skipped. Spend the five minutes once, and every conversation after starts with Claude already knowing who you are, how you want to be spoken to, and what you are working on.",
+      },
+    ],
+  },
+  {
+    slug: "claude-council-five-advisors-setup",
+    title: "The Claude Council: Turn One Assistant Into Five Advisors Who Argue First",
+    excerpt:
+      "Set up a Claude Project that answers every question as five debating advisors, then reconciles them into one clear verdict — here is the exact setup and five prompts.",
+    category: "AI",
+    tags: ["Claude", "AI", "Productivity"],
+    keywords: [
+      "claude council",
+      "claude project instructions",
+      "claude ai advisors",
+      "claude decision making prompt",
+      "claude five advisors",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Close-up of a computer circuit board, representing layered AI reasoning",
+    date: "2026-06-13",
+    readTime: "5 min read",
+    content: [
+      {
+        type: "p",
+        text: "I make a lot of decisions out loud with Claude — should I take this client, is this architecture overbuilt, am I about to talk myself into something. The problem with asking any single assistant is that it tends to agree with the framing you handed it. A trick I have been using fixes that: instead of one obliging voice, I make Claude answer as a small council of advisors who argue before they agree. Here is the exact setup, and five ways I put it to work.",
+      },
+      { type: "h2", text: "What the Council actually is" },
+      {
+        type: "p",
+        text: "There is no hidden feature here, and that is the appealing part. The Council is just a Claude Project with a set of standing instructions. A Project is a workspace where every chat you open inherits the same instructions and files automatically, so you configure the behaviour once and never paste it again. Name the project, give it the council instructions below, and from then on every conversation inside it answers as five distinct advisors instead of one agreeable assistant.",
+      },
+      { type: "h2", text: "Setting it up in about two minutes" },
+      {
+        type: "p",
+        text: "Open the Projects section in the Claude sidebar and choose New Project. Name it something like The Council. Open the project settings and paste the instructions from the next section into the project instructions field. That is the whole setup. Every new chat you start inside that project now runs as a council; chats outside it behave normally, so you are not changing how the rest of Claude works.",
+      },
+      { type: "h2", text: "The instructions to paste" },
+      {
+        type: "p",
+        text: "The core rule is simple: Claude must never reply as a single voice. For every question it spins up five advisors, each taking a deliberately different angle, then closes with one verdict. Paste a version of this into the project instructions, telling Claude that for every question it should respond as the following five advisors and then reconcile them:",
+      },
+      {
+        type: "ul",
+        items: [
+          "The Contrarian — goes straight at the weakest link in your reasoning and says what no one else will",
+          "The First-Principles Thinker — ignores how you phrased the question and solves the actual underlying problem",
+          "The Expansionist — looks for the upside and the bigger opportunity you are not seeing",
+          "The Outsider — has zero context on purpose, so it catches the obvious thing experts skip past",
+          "The Executor — skips the theory and tells you the single next move to make",
+        ],
+      },
+      {
+        type: "p",
+        text: "Close the instructions with the part that does the real work: after the five have spoken, Claude weighs them against each other, drops the weak arguments, and hands you one clear verdict. Add a final line telling it to say so plainly when it is unsure rather than guessing — that single sentence is what keeps the whole thing honest.",
+      },
+      { type: "h2", text: "Why it beats just asking" },
+      {
+        type: "p",
+        text: "A normal question gets you one answer shaped by how you asked it. Forcing five named roles makes Claude argue with itself before it commits, and the disagreement is where the value lives — the Contrarian surfaces the risk your excitement hid, the Outsider names the obvious flaw, and the Executor stops it all turning into philosophy. The instruction to admit uncertainty matters just as much: a council that confidently invents an answer is worse than no council at all.",
+      },
+      { type: "h2", text: "Five prompts to put it to work" },
+      {
+        type: "p",
+        text: "These are the prompts I reach for most. Feed them the decision you are least comfortable examining first.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Am I deluded? — Tell the Council you have already decided on a move, paste your reasoning, and ask it to separate what is solid from what is you talking yourself into it, ending with a straight yes or no",
+          "Find my pattern — Give it your three biggest decisions from the last few years and how each turned out, and ask it to name the bias that keeps repeating and predict the next mistake it will cause",
+          "Read my excuse — Name the thing you have been putting off and your reason for it, and ask whether that reason is a real obstacle or a dressed-up fear; if it is fear, ask for the first move to make tonight",
+          "Attack the deal — Paste the offer, contract, or purchase you are about to accept and ask the Council what is overpriced, what is missing, what you would regret in six months, and what to negotiate first",
+          "Stress test — Lay out a plan you are proud of, then ask each advisor to assume it failed six months from now, name the most likely cause of death, and give you the fix, ranked by what to patch first",
+        ],
+      },
+      {
+        type: "quote",
+        text: "The point of the Council is not to make Claude smarter. It is to stop it from agreeing with you — which, when you are about to make a big decision, is the most useful thing an advisor can do.",
+      },
+      {
+        type: "p",
+        text: "Build the project once and it is there every time you need a second, third, and fourth opinion. I keep mine pinned and open it whenever a decision feels too comfortable — usually the surest sign I have not actually pressure-tested it yet.",
+      },
+    ],
+  },
+  {
     slug: "multiple-claude-profiles-windows-setup",
     title: "How to Run Multiple Claude Code Accounts on Windows with CLAUDE_CONFIG_DIR",
     excerpt:
