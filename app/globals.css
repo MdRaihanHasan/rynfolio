@@ -266,3 +266,74 @@ ul.pagination li.page-item.disabled .page-link {
   height: 65px;
   object-fit: cover;
 }
+
+/* ---- Blog article body: command/code blocks -------------------------------
+   The template ships no <pre>/<code> styling. Posts now carry { type: "code" }
+   command blocks, so give them a terminal look: dark surface, a label bar for
+   the language/filename, monospace text, and horizontal scroll so long commands
+   never break the page layout on mobile. */
+.article-content .article-code {
+  margin: 30px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0c0c0c;
+}
+
+.article-content .article-code-bar {
+  font-family: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  background: var(--lighter-color);
+  padding: 9px 18px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.article-content .article-code pre {
+  margin: 0;
+  padding: 18px;
+  overflow-x: auto;
+  background: transparent;
+}
+
+.article-content .article-code code {
+  font-family: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #e6e6e6;
+  white-space: pre;
+  background: transparent;
+  padding: 0;
+}
+
+/* ---- Blog article body: inline images ------------------------------------- */
+.article-content .article-image {
+  margin: 35px 0;
+}
+
+.article-content .article-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.article-content .article-image figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--base-color);
+  text-align: center;
+}
+
+/* ---- Blog article body: inline links (internal cross-links for SEO) -------- */
+.article-content a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-content a:hover {
+  opacity: 0.8;
+}
