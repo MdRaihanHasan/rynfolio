@@ -37,13 +37,14 @@ export default function ContactForm() {
     <form id="contactForm" className="contactForm" name="contactForm" onSubmit={handleSubmit}>
       <div className="row">
         <div className="col-md-6">
-          <div className="form-group">
+          <div className="form-group" suppressHydrationWarning>
             <label htmlFor="name">Name *</label>
             <input
               type="text"
               id="name"
               name="name"
               className="form-control"
+              suppressHydrationWarning
               placeholder="Your Full Name"
               required
             />
@@ -53,13 +54,14 @@ export default function ContactForm() {
           </div>
         </div>
         <div className="col-md-6">
-          <div className="form-group">
+          <div className="form-group" suppressHydrationWarning>
             <label htmlFor="email">Email *</label>
             <input
               type="email"
               id="email"
               name="email"
               className="form-control"
+              suppressHydrationWarning
               placeholder="your@email.com"
               required
             />
@@ -69,13 +71,14 @@ export default function ContactForm() {
           </div>
         </div>
         <div className="col-md-6">
-          <div className="form-group">
+          <div className="form-group" suppressHydrationWarning>
             <label htmlFor="phone_number">Phone Number</label>
             <input
               type="text"
               id="phone_number"
               name="phone_number"
               className="form-control"
+              suppressHydrationWarning
               placeholder="Please enter your Phone Number"
             />
             <label htmlFor="phone_number" className="for-icon">
@@ -84,13 +87,14 @@ export default function ContactForm() {
           </div>
         </div>
         <div className="col-md-6">
-          <div className="form-group">
+          <div className="form-group" suppressHydrationWarning>
             <label htmlFor="subject">Service Interested In *</label>
             <input
               type="text"
               id="subject"
               name="subject"
               className="form-control"
+              suppressHydrationWarning
               placeholder="e.g. Full-Stack Development"
               required
             />
@@ -100,12 +104,13 @@ export default function ContactForm() {
           </div>
         </div>
         <div className="col-md-12">
-          <div className="form-group">
+          <div className="form-group" suppressHydrationWarning>
             <label htmlFor="message">Project Details *</label>
             <textarea
               name="message"
               id="message"
               className="form-control"
+              suppressHydrationWarning
               rows={4}
               placeholder="Describe your project, timeline, and requirements..."
               required

@@ -13,7 +13,7 @@ const workColumns: TimelineEntry[][] = [
       duration: "2022 - Present",
       title: (
         <>
-          Full-Stack Developer <br /> &amp; DevOps Engineer
+          Co-Founder <br /> &amp; Full-Stack Developer, Sentrize.com
         </>
       ),
     },

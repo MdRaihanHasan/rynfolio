@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import HiddenSidebar from "@/components/layout/HiddenSidebar";
 import Footer from "@/components/layout/Footer";
 import WowInit from "@/components/ui/WowInit";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const stylesheets = [
   "/assets/css/flaticon.min.css",
@@ -54,6 +55,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        <ChatWidget />
         <WowInit />
       </body>
     </html>

@@ -23,6 +23,11 @@ export default function AboutSection() {
                     infrastructure. My expertise spans full-stack development, backend
                     architecture, cloud deployment, and database optimization using modern
                     technologies like PHP, Laravel, React, Next.js, AWS, and Google Cloud.
+                    I&rsquo;m also the Co-Founder of{" "}
+                    <a href="https://sentrize.com" target="_blank" rel="noopener noreferrer">
+                      Sentrize.com
+                    </a>
+                    .
                   </p>
                 </div>
                 <ul className="list-style-one two-column wow fadeInUp delay-0-2s">
