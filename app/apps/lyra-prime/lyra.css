@@ -39,11 +39,33 @@
   text-underline-offset: 3px;
 }
 
+/* Anchor buttons must beat the generic `.lp a` link styling (the theme sets
+   a muted link color globally, and `.lp a` recolors/underlines all links —
+   which would otherwise hijack <a> buttons like the Download CTA). */
+.lp a.lp-btn,
+.lp a.lp-btn:hover {
+  text-decoration: none;
+}
+.lp a.lp-btn-primary,
+.lp a.lp-btn-primary:hover {
+  color: #fff;
+}
+.lp a.lp-btn-ghost,
+.lp a.lp-btn-ghost:hover {
+  color: var(--lp-text);
+}
+.lp-cta-band a.lp-btn-primary,
+.lp-cta-band a.lp-btn-primary:hover {
+  color: #1a2234;
+}
+
+/* Match the site's standard content container width (1320px) so the Lyra
+   pages are as wide as every other page instead of looking narrow. */
 .lp-container {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .lp h1,
