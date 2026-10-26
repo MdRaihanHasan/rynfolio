@@ -1,0 +1,164 @@
+/* Styles for the /apps directory page. Uses the site's own design tokens
+   (--primary-color, --border-color, etc. from style.css) so the app list
+   feels native to ryn.bd. Class names are unique to this page. */
+
+.apps-intro {
+  max-width: 640px;
+  margin: 0 auto 55px;
+}
+
+.apps-grid {
+  --bs-gutter-x: 1.5rem;
+}
+
+.app-card {
+  --app-accent: var(--primary-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+.app-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 243, 29, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.app-card__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+.app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+.app-card__head {
+  flex: 1;
+  min-width: 0;
+}
+.app-card__head h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+.app-card__head h3 a {
+  color: var(--heading-color);
+}
+.app-card__head h3 a:hover {
+  color: var(--primary-color);
+}
+.app-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  font-size: 13px;
+  color: var(--base-color);
+}
+.app-meta .app-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.app-meta .app-cat::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--app-accent);
+}
+.app-meta .app-platform i {
+  margin-right: 5px;
+}
+
+.app-status {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+.app-status--available {
+  color: var(--primary-color);
+  background: rgba(201, 243, 29, 0.08);
+  border-color: rgba(201, 243, 29, 0.3);
+}
+.app-status--coming-soon {
+  color: var(--base-color);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.app-desc {
+  margin: 0;
+  color: var(--base-color);
+  font-size: 15px;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.app-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  padding-top: 4px;
+}
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 22px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black-color);
+  background: var(--primary-color);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.app-btn:hover {
+  color: var(--black-color);
+  opacity: 0.9;
+  transform: translateX(2px);
+}
+.app-card__links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+}
+.app-card__links a {
+  color: var(--base-color);
+}
+.app-card__links a:hover {
+  color: var(--primary-color);
+}
+
+.apps-empty {
+  text-align: center;
+  color: var(--base-color);
+  padding: 40px 0;
+}
+
+@media (max-width: 575px) {
+  .app-card {
+    padding: 24px;
+  }
+  .app-card__top {
+    flex-wrap: wrap;
+  }
+  .app-status {
+    order: 3;
+  }
+}

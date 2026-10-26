@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/data/posts";
+import { lyraNav } from "@/lib/data/lyra";
 
 const BASE_URL = "https://ryn.bd";
 
@@ -14,7 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/certifications`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/contact`, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${BASE_URL}/apps`, changeFrequency: "monthly", priority: 0.7 },
   ];
+
+  const lyraRoutes: MetadataRoute.Sitemap = lyraNav.map((item) => ({
+    url: `${BASE_URL}${item.href}`,
+    changeFrequency: "monthly",
+    priority: item.href === "/apps/lyra-prime" ? 0.8 : 0.5,
+  }));
 
   const postRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
@@ -23,5 +31,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...postRoutes];
+  return [...staticRoutes, ...lyraRoutes, ...postRoutes];
 }
