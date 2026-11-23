@@ -6,14 +6,14 @@ import { apps } from "@/lib/data/apps";
 import "./apps.css";
 
 export const metadata: Metadata = {
-  title: "Apps - Md Raihan Hasan | Android & Web Apps",
+  title: "Apps - Md Raihan Hasan | Android, Desktop & Web Apps",
   description:
-    "Apps built by Md Raihan Hasan, including Lyra Prime — a private AI assistant for Android that connects to your own server. Browse apps with their privacy policies, terms, and support.",
+    "Apps and open-source tools built by Md Raihan Hasan — Lyra Prime (private AI assistant for Android), DevBox, Unified Email, LyraPanel and more across Windows, desktop and the web.",
   alternates: { canonical: "/apps" },
   openGraph: {
     title: "Apps - Md Raihan Hasan",
     description:
-      "Apps built by Md Raihan Hasan, including Lyra Prime — a private AI assistant for Android.",
+      "Apps and open-source tools built by Md Raihan Hasan — Android, desktop and web.",
     url: "/apps",
     type: "website",
   },
@@ -54,8 +54,8 @@ export default function AppsPage() {
                   My <span>Apps</span>
                 </h2>
                 <p className="lead-text">
-                  Apps I design and ship — each with its own privacy policy, terms, and support.
-                  More are on the way.
+                  Apps and tools I design and ship — from Android and desktop software to
+                  open-source web tools and developer libraries. More are on the way.
                 </p>
               </div>
             </div>
@@ -74,14 +74,20 @@ export default function AppsPage() {
                     style={{ ["--app-accent" as string]: app.accent }}
                   >
                     <div className="app-card__top">
-                      <img
-                        className="app-icon"
-                        src={app.icon}
-                        alt={`${app.name} app icon`}
-                        width={64}
-                        height={64}
-                        loading="lazy"
-                      />
+                      {app.icon ? (
+                        <img
+                          className="app-icon"
+                          src={app.icon}
+                          alt={`${app.name} app icon`}
+                          width={64}
+                          height={64}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span className="app-icon app-icon--glyph" aria-hidden="true">
+                          <i className={app.glyph ?? "fas fa-cube"} />
+                        </span>
+                      )}
                       <div className="app-card__head">
                         <h3>
                           <Link href={app.href}>{app.name}</Link>
@@ -89,7 +95,7 @@ export default function AppsPage() {
                         <div className="app-meta">
                           <span className="app-cat">{app.category}</span>
                           <span className="app-platform">
-                            <i className="fab fa-android" aria-hidden="true" />
+                            <i className={app.platformIcon} aria-hidden="true" />
                             {app.platform}
                           </span>
                         </div>
@@ -101,13 +107,27 @@ export default function AppsPage() {
 
                     <p className="app-desc">{app.description}</p>
 
+                    <ul className="app-tech app-tech--card">
+                      {app.tech.map((t) => (
+                        <li key={t}>{t}</li>
+                      ))}
+                    </ul>
+
                     <div className="app-card__actions">
                       <Link className="app-btn" href={app.href}>
                         View app <i className="far fa-arrow-right" aria-hidden="true" />
                       </Link>
                       <span className="app-card__links">
-                        <Link href={`${app.href}/privacy`}>Privacy</Link>
-                        <Link href={`${app.href}/support`}>Support</Link>
+                        {app.hasPages ? (
+                          <>
+                            <Link href={`${app.href}/privacy`}>Privacy</Link>
+                            <Link href={`${app.href}/support`}>Support</Link>
+                          </>
+                        ) : app.github ? (
+                          <a href={app.github} target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-github" aria-hidden="true" /> GitHub
+                          </a>
+                        ) : null}
                       </span>
                     </div>
                   </article>
