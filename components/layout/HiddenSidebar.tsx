@@ -4,6 +4,10 @@ import { useState } from "react";
 
 import SocialLinks from "@/components/ui/SocialLinks";
 
+// Freelancers Bangladesh ID card (issued by ICT Division) — downloadable from /public.
+const FREELANCER_KEY_HREF = "/assets/docs/md-raihan-ali-freelancer-id.pdf";
+const FREELANCER_KEY_FILENAME = "MD-Raihan-Ali-Freelancer-ID.pdf";
+
 type Status = "idle" | "sending" | "sent" | "error";
 
 export default function HiddenSidebar() {
@@ -95,6 +99,15 @@ export default function HiddenSidebar() {
               </div>
             </form>
           </div>
+
+          {/* Download Freelancer Key — official Freelancers Bangladesh ID card */}
+          <a
+            href={FREELANCER_KEY_HREF}
+            download={FREELANCER_KEY_FILENAME}
+            className="freelancer-key-btn"
+          >
+            <i className="fas fa-download"></i> Download Freelancer Key
+          </a>
 
           {/* Social Icons */}
           <SocialLinks />
